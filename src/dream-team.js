@@ -1,22 +1,13 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function createDreamTeam(myFriends) {
-  if (Array.isArray(myFriends) === false) return false;
+  if (!Array.isArray(myFriends)) return false;
 
-  let dreamTeam = '';
-  let newName = '';
   let arrTeam = [];
 
   myFriends.forEach((friendName) => {
-    if (typeof(friendName) === 'string') {
-      newName  = friendName.trim();
-      newName = newName.toUpperCase();
-      arrTeam.push(newName[0]);
-    } 
+    if (typeof(friendName) === 'string') arrTeam.push(friendName.trim().toUpperCase()[0]); 
   })
 
-  arrTeam.sort();
-  dreamTeam = arrTeam.join('');
-
-  return dreamTeam;
+  return arrTeam.sort().join('');
 };

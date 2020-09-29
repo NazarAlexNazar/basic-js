@@ -34,8 +34,7 @@ class VigenereCipheringMachine {
       }
     }
 
-    if (this.isReverse) txtResult = txtResult.split("").reverse().join("");
-    return txtResult;
+    return  (!this.isReverse) ? txtResult : txtResult.split("").reverse().join("");
   }    
 
 
@@ -70,8 +69,7 @@ class VigenereCipheringMachine {
       }
     }
 
-    if (this.isReverse) txtResult = txtResult.split("").reverse().join("");
-    return txtResult;
+    return  (!this.isReverse) ? txtResult : txtResult.split("").reverse().join("");
   }
 }
 
